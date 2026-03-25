@@ -1,5 +1,17 @@
 [
-  {
-    
-  }
+  { "Name": "Toyota Corolla", "LicensePlate": "WA12345", "FuelLevel": 85, "Status": "Available" },
+  { "Name": "Ford Transit", "LicensePlate": "KR67890", "FuelLevel": 40, "Status": "InRoute" },
+  { "Name": "Skoda Octavia", "LicensePlate": "PO11223", "FuelLevel": 100, "Status": "Service" },
+  { "Name": "Volkswagen Golf", "LicensePlate": "DW44556", "FuelLevel": 12, "Status": "InRoute" },
+  { "Name": "Tesla Model 3", "LicensePlate": "GD77889", "FuelLevel": 92, "Status": "Available" },
+  { "Name": "Mercedes Sprinter", "LicensePlate": "LU99001", "FuelLevel": 55, "Status": "Service" },
+  { "Name": "BMW 3 Series", "LicensePlate": "BI33445", "FuelLevel": 78, "Status": "Available" },
+  { "Name": "Audi A4", "LicensePlate": "Z012345", "FuelLevel": 100, "Status": "Available" },
+  { "Name": "Renault Clio", "LicensePlate": "EL55667", "FuelLevel": 30, "Status": "InRoute" },
+  { "Name": "Hyundai i30", "LicensePlate": "RZ88990", "FuelLevel": 65, "Status": "Service" },
+  { "Name": "Volvo XC60", "LicensePlate": "NO44332", "FuelLevel": 45, "Status": "InRoute" },
+  { "Name": "Kia Ceed", "LicensePlate": "FG22110", "FuelLevel": 48, "Status": "Available" },
+  { "Name": "Peugeot Boxer", "LicensePlate": "CT66778", "FuelLevel": 89, "Status": "InRoute" },
+  { "Name": "Mazda 6", "LicensePlate": "SL99887", "FuelLevel": 73, "Status": "Available" },
+  { "Name": "Honda Civic", "LicensePlate": "OP11554", "FuelLevel": 15, "Status": "Service" }
 ]
