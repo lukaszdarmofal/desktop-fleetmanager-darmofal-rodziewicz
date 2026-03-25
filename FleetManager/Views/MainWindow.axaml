@@ -3,6 +3,7 @@
         xmlns:vm="using:FleetManager.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:FleetManager.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="FleetManager.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -15,15 +16,21 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <StackPanel Orientation="Vertical">
-        <TextBlock Text="Fleet Manager" Margin="15" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
-        <ListBox>
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-    </StackPanel>
+    <ScrollViewer>
+        <StackPanel Orientation="Vertical">
+                <TextBlock Text="Fleet Manager" Margin="15" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
+                <ListBox ItemsSource="{Binding Vehicles}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            
+                            <views:VehicleItemView/>
+                            
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+    </ScrollViewer>
+    
+    
 
 </Window>

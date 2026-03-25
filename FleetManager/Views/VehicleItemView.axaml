@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:FleetManager.ViewModels"
              xmlns:models="clr-namespace:FleetManager.Models"
              x:Class="FleetManager.Views.VehicleItemView"
-             x:DataType="vm:VehicleItemViewModel">
+             x:DataType="models:Vehicle">
 
     <StackPanel Spacing="5">
 
@@ -19,13 +19,18 @@
         <StackPanel Orientation="Horizontal" Spacing="5">
 
             <Button Content="Tankuj"
-                    Command="{Binding RefuelCommand}"/>
+                    Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).RefuelCommand}"
+                    CommandParameter="{Binding}"/>
 
             <Button Content="Do Serwisu"
-                    Command="{Binding SendToServiceCommand}"/>
+                    Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SendToServiceCommand}"
+                    CommandParameter="{Binding}"/>
             
             <Button Content="W trasie"
-                    Command="{Binding SendOnRoadCommand}"/>
+                    Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SendOnRoadCommand}"
+                    CommandParameter="{Binding}"/>
+                    
+                    
 
         </StackPanel>
 
