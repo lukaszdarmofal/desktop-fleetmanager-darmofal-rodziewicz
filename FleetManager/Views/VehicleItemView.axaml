@@ -26,9 +26,15 @@
                     Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SendToServiceCommand}"
                     CommandParameter="{Binding}"/>
             
-            <Button Content="W trasie"
+            <Button Content="Wyślij w trasę"
                     Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SendOnRoadCommand}"
-                    CommandParameter="{Binding}"/>
+                    CommandParameter="{Binding}"
+                    />
+            
+            <Button Content="Wyślij do bazy"
+                    Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SendBackCommand}"
+                    CommandParameter="{Binding}"
+                    />
                     
                     
 

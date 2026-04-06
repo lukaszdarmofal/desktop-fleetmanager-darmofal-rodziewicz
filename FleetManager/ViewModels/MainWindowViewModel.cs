@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Runtime.InteropServices.Swift;
 using System.Text.Json;
 using FleetManager.Models;
 using ReactiveUI;
@@ -21,9 +23,9 @@ public class MainWindowViewModel : ViewModelBase
 
     public ReactiveCommand<Vehicle, Unit> RefuelCommand { get; }
     public ReactiveCommand<Vehicle, Unit> SendToServiceCommand { get; }
+
+    public ReactiveCommand<Vehicle, Unit> SendBackCommand { get; }
     public ReactiveCommand<Vehicle, Unit> SendOnRoadCommand { get; }
-    
-    
     
     [Reactive] public string Name { get; set; }
     [Reactive] public string LicensePlate { get; set; }
@@ -51,29 +53,36 @@ public class MainWindowViewModel : ViewModelBase
 
        SendOnRoadCommand = ReactiveCommand.Create<Vehicle>(vehicle => 
        {
-           if (vehicle.Status != "InRoute" )
-           {
+           if (vehicle.Status == "Available" )
+           {               
                if (vehicle.FuelLevel - 20 < 0)
                {
                    vehicle.FuelLevel = 0;
-                   Console.WriteLine("Too low paliwo yo");
+                   Console.WriteLine("Za mało paliwa");
                }
                else
                {
                    vehicle.Status = "InRoute";
                    vehicle.FuelLevel -= 20;
-                   Console.WriteLine("InRoute: " + vehicle.Status);
+                   Console.WriteLine("Status: " + vehicle.Status);
                    Console.WriteLine("FuelLevel: " + vehicle.FuelLevel);
                }
                
            }
-           else
+       });
+
+       SendBackCommand = ReactiveCommand.Create<Vehicle>(vehicle =>
+       {
+           if (vehicle.Status != "Available")
            {
                vehicle.Status = "Available";
-               Console.WriteLine("Available: " + vehicle.Status);
+           }
+           else
+           {
+               Console.WriteLine("Jest już w bazie");
            }
        });
-       
+
     }
 
     private void LoadVehicles()
