@@ -83,7 +83,9 @@ public class MainWindowViewModel : ViewModelBase
            }
        });
 
-    }
+    } /// <summary>
+      /// POV: I'm your coffe effoc effoc effoc effoc
+      /// </summary>
 
     private void LoadVehicles()
     {

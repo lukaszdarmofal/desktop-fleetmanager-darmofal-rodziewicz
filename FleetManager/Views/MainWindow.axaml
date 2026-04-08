@@ -8,7 +8,8 @@
         x:Class="FleetManager.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="FleetManager">
+        Title="FleetManager"
+        Background="Bisque">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -19,7 +20,7 @@
     <ScrollViewer>
         <StackPanel Orientation="Vertical">
                 <TextBlock Text="Fleet Manager" Margin="15" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
-                <ListBox ItemsSource="{Binding Vehicles}">
+                <ListBox ItemsSource="{Binding Vehicles}" Background="BurlyWood">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             

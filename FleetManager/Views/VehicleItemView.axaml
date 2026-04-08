@@ -6,7 +6,7 @@
              x:Class="FleetManager.Views.VehicleItemView"
              x:DataType="models:Vehicle">
 
-    <StackPanel Spacing="5">
+    <StackPanel Spacing="5" Margin="8" >
 
         <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
 
@@ -20,20 +20,45 @@
 
             <Button Content="Tankuj"
                     Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).RefuelCommand}"
-                    CommandParameter="{Binding}"/>
+                    CommandParameter="{Binding}"
+                    Width="120"
+                    Height="50"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Margin="0 0 5 0"
+                    Background="#AA9966"/>
 
             <Button Content="Do Serwisu"
                     Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SendToServiceCommand}"
-                    CommandParameter="{Binding}"/>
+                    CommandParameter="{Binding}"
+                    Width="120"
+                    Height="50"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Margin="0 0 5 0"
+                    Background="#77AA99"/>
             
             <Button Content="Wyślij w trasę"
                     Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SendOnRoadCommand}"
                     CommandParameter="{Binding}"
+                    Width="120"
+                    Height="50"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Margin="0 0 5 0"
+                    Background="RoyalBlue"
+                    
                     />
             
             <Button Content="Wyślij do bazy"
                     Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SendBackCommand}"
                     CommandParameter="{Binding}"
+                    Width="120"
+                    Height="50"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Margin="0 0 5 0 "
+                    Background="RosyBrown"
                     />
                     
                     
